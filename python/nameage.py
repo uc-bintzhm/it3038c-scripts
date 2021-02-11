@@ -2,8 +2,15 @@ import time
 
 start_time = time.time()
 
-print('What is your name?')
+print("What is your name?")
 myName = input()
+while myName != 'Madison':
+    if myName == 'your name':
+        print('Ha ha, very funny. Seriously, who are you?')
+        myName = input()
+    else:
+        print('This is not "your name". Please type "your name"?')
+        myName = input()
 print('Hello, ' + myName + '. That is a good name. How old are you?')
 myAge  = int(input())
 
@@ -21,8 +28,8 @@ else:
 
 programAge = int(time.time() - start_time)
 
-#print("%s? That's funny, I am only %s seconds old." % (myAge, programAge))
-#print("I wish I was %s years old." % (myAge *2))
+print("%s? That's funny, I am only %s seconds old." % (myAge, programAge))
+print("I wish I was %s years old." % (myAge *2))
 
 time.sleep(3)
 print("I'm tired. I go sleep sleep now.")
