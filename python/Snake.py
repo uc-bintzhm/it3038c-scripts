@@ -91,16 +91,16 @@ def gameLoop(): #creating a function
         snake_head.append(x1)
         snake_head.append(y1)
         snake_list.append(snake_head)
-            if len(snake_list) > Length_of_snake:
-                del snake_list[0]
+        if len(snake_list) > Length_of_snake:
+            del snake_list[0]
             
-            for x in snake_list[:-1]: #this is where the snake will have you lose if you hit the snake
+        for x in snake_list[:-1]: #this is where the snake will have you lose if you hit the snake
                 if x == snake_head:
                     game_close = True
             
-            snakeline(snake_block, snake_list)
+        snakeline(snake_block, snake_list)
         
-        pygame.draw.rect(dis,blue,[x1,y1,snake_block,snake_block]) #sets the starting point with a blue color/snake
+        #pygame.draw.rect(dis,blue,[x1,y1,snake_block,snake_block]) #sets the starting point with a blue color/snake
         
         pygame.display.update()
 
