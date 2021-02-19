@@ -12,16 +12,14 @@ dis=pygame.display.set_mode((dis_width,dis_width)) #Sets screen size in pixels
 pygame.display.update()
 pygame.display.set_caption('Snake by Madison Bintz') #Displays name at the window browser
 
-game_over=False
-
 blue=(0,0,255) #have colors
 red=(255,0,0)
 black=(0,0,0)
 
 snake_block=10 #size of block
+snake_speed=30
 
 clock = pygame.time.Clock()
-snake_speed=30
 
 font_style=pygame.font.SysFont(None, 50)
 
@@ -43,6 +41,10 @@ def gameLoop(): #creating a function
     foody = round(random.randrange(0, dis_width - snake_block) / 10.0 ) * 10.0
 
     while not game_over:
+        while game_close == True:
+            message("You lost", red)
+            pygame.display.update()
+            time.sleep(2)
         for event in pygame.event.get():
             if event.type==pygame.QUIT: #allows you to quit the game
                 game_over=True
@@ -72,9 +74,9 @@ def gameLoop(): #creating a function
 
         clock.tick(snake_speed)
 
-message("You lost", red)
-pygame.display.update()
-time.sleep(2)
+#message("You lost", red)
+#pygame.display.update()
+#time.sleep(2)
 
 pygame.quit()
 quit()
