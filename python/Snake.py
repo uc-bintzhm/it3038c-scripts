@@ -9,7 +9,6 @@ dis_height = 600
 
 
 dis=pygame.display.set_mode((dis_width,dis_width)) #Sets screen size in pixels
-pygame.display.update()
 pygame.display.set_caption('Snake by Madison Bintz') #Displays name at the window browser
 
 blue=(0,0,255) #have colors
@@ -41,7 +40,9 @@ def gameLoop(): #creating a function
     foody = round(random.randrange(0, dis_width - snake_block) / 10.0 ) * 10.0
 
     while not game_over:
+        
         while game_close == True:
+            dis.fill(black)
             message("You lost. Press 'q' to Quit and press 'p' to Play again.", red) # give users option to play again or not
             pygame.display.update()
             
@@ -91,5 +92,7 @@ def gameLoop(): #creating a function
 #pygame.display.update()
 #time.sleep(2)
 
-pygame.quit()
-quit()
+    pygame.quit()
+    quit()
+
+gameLoop()
