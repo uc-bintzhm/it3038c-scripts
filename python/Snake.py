@@ -94,8 +94,8 @@ def gameLoop(): #creating a function
         pygame.draw.rect(dis,red,[foodx,foody,snake_block,snake_block]) #Sets the red dot/rectangle
         
         snake_head = []
-        snake_head.append(x1* 2) #make bigger
-        snake_head.append(y1* 2)
+        snake_head.append(x1) #make bigger
+        snake_head.append(y1)
         snake_list.append(snake_head)
         if len(snake_list) > Length_of_snake:
             del snake_list[0]
