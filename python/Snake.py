@@ -20,11 +20,11 @@ snake_speed=30
 
 clock = pygame.time.Clock()
 
-font_style=pygame.font.SysFont(None, 50)
+font_style=pygame.font.SysFont(None, 20)
 
 def message(msg,color):
     mesg= font_style.render(msg, True, color)
-    dis.blit(mesg, [dis_width/2, dis_height/2])
+    dis.blit(mesg, [dis_width/3, dis_height/3])
 
 def gameLoop(): #creating a function
     game_over = False
