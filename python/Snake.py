@@ -20,8 +20,12 @@ snake_speed=20
 
 clock = pygame.time.Clock()
 
-font_style=pygame.font.SysFont(None, 20)
+font_style= pygame.font.SysFont(None, 20)
 score_font = pygame.font.SysFont(None, 20)
+
+def score(score):
+    value = score_font.render("Score: " + str(score), True, blue) #displays score
+    dis.blit(value, [0, 0])
 
 def snakeline(snake_block, snake_list):
     for x in snake_list:
@@ -29,7 +33,7 @@ def snakeline(snake_block, snake_list):
 
 def message(msg,color):
     mesg= font_style.render(msg, True, color)
-    dis.blit(mesg, [dis_width/3, dis_height/3])
+    dis.blit(mesg, [dis_width/6, dis_height/3])
 
 def gameLoop(): #creating a function
     game_over = False
@@ -42,9 +46,9 @@ def gameLoop(): #creating a function
     y1_change=0 #makes snake go fasttt
 
     snake_list = []
-    Length_of_snake = 1
+    Length_of_snake = 1 #sets starting size of snake
     
-    foodx = round(random.randrange(0, dis_width - snake_block) / 10.0 ) * 10.0
+    foodx = round(random.randrange(0, dis_width - snake_block) / 10.0 ) * 10.0 #make the fooooooood
     foody = round(random.randrange(0, dis_height - snake_block) / 10.0 ) * 10.0
 
     while not game_over:
@@ -79,7 +83,7 @@ def gameLoop(): #creating a function
                 elif event.key == pygame.K_DOWN: #If presses down key
                     x1_change = 0
                     y1_change = snake_block
-        if x1 >= dis_width or x1 < 0 or y1 >= dis_height or y1 <0:
+        if x1 >= dis_width or x1 < 0 or y1 >= dis_height or y1 <0: #no hitting the borderrr
             game_close=True
         
         x1 += x1_change
@@ -88,7 +92,7 @@ def gameLoop(): #creating a function
         pygame.draw.rect(dis,red,[foodx,foody,snake_block,snake_block]) #Sets the red dot/rectangle
         
         snake_head = []
-        snake_head.append(x1)
+        snake_head.append(x1) #make bigger
         snake_head.append(y1)
         snake_list.append(snake_head)
         if len(snake_list) > Length_of_snake:
