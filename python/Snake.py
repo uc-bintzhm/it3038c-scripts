@@ -16,6 +16,9 @@ pygame.display.set_caption('Snake by Madison Bintz') #Displays name at the windo
 blue=(0,0,255) #have colors
 red=(255,0,0)
 black=(0,0,0)
+lightPurple=(200,191,231)
+Purple=(63,72,204)
+darkBlue=(0,162,232)
 
 snake_block=10 #size of block
 snake_speed=20
@@ -26,12 +29,12 @@ font_style= pygame.font.SysFont(None, 20)
 score_font = pygame.font.SysFont(None, 20)
 
 def score(score):
-    value = score_font.render("Score: " + str(score), True, blue) #displays score
+    value = score_font.render("Score: " + str(score), True, darkBlue) #displays score
     dis.blit(value, [0, 0])
 
 def snakeline(snake_block, snake_list):
     for x in snake_list:
-        pygame.draw.rect(dis, blue, [x[0], x[1], snake_block, snake_block]) #Grow the SNAKE
+        pygame.draw.rect(dis, Purple, [x[0], x[1], snake_block, snake_block]) #Grow the SNAKE
 
 def message(msg,color):
     mesg= font_style.render(msg, True, color)
@@ -56,7 +59,7 @@ def gameLoop(): #creating a function
     while not game_over:
         
         while game_close == True:
-            dis.fill(black)
+            dis.fill(lightPurple)
             message("You lost. Press 'q' to Quit and press 'p' to Play again.", red) # give users option to play again or not
             pygame.display.update()
             
@@ -90,8 +93,8 @@ def gameLoop(): #creating a function
         
         x1 += x1_change
         y1 += y1_change
-        dis.fill(black)
-        pygame.draw.rect(dis,red,[foodx,foody,snake_block,snake_block]) #Sets the red dot/rectangle
+        dis.fill(lightPurple)
+        pygame.draw.rect(dis,darkBlue,[foodx,foody,snake_block,snake_block]) #Sets the red dot/rectangle
         
         snake_head = []
         snake_head.append(x1) #make bigger
