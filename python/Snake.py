@@ -41,7 +41,7 @@ def message(msg,color):
     dis.blit(mesg, [dis_width/6, dis_height/3])
 
 def gameLoop(): #creating a function
-    self_score = 0
+    self_score = 0 #change from first project
     game_over = False
     game_close = False
 
@@ -62,7 +62,7 @@ def gameLoop(): #creating a function
         
         while game_close == True:
             dis.fill(lightPurple)
-            score(Length_of_snake - 1)
+            score(Length_of_snake - 1) #change from last time, moved the score to display when losing too
             message("You lost. Press 'q' to Quit  and press 'p' to Play again.", red) # give users option to play again or not
             pygame.display.update()
             
@@ -72,7 +72,7 @@ def gameLoop(): #creating a function
                         game_over = True
                         game_close = False
                         logging.basicConfig(filename='pythonsnake.txt',format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
-                        logging.warning('The player got a score of %s.', self_score) #script inspired from realpython.com
+                        logging.warning('The player got a score of %s.', self_score) #change script inspired from realpython.com
                     if event.key == pygame.K_p: # has p play again
                         logging.basicConfig(filename='pythonsnake.txt', format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
                         logging.warning('The player got a score of %s.', self_score)
@@ -116,7 +116,7 @@ def gameLoop(): #creating a function
             
         snakeline(snake_block, snake_list)
         score(Length_of_snake - 1)
-        self_score = Length_of_snake - 1
+        self_score = Length_of_snake - 1 #calculates the score for the log too
         
         #pygame.draw.rect(dis,blue,[x1,y1,snake_block,snake_block]) #sets the starting point with a blue color/snake
         
