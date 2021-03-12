@@ -3,14 +3,14 @@
 import pygame
 import time
 import random
-pygame.init()
+import logging #new addition/change, imports logging
 
+pygame.init()
 
 dis_width = 800 #sets border of game
 dis_height = 600
 
-
-dis=pygame.display.set_mode((dis_width,dis_width)) #Sets screen size in pixels
+dis=pygame.display.set_mode((dis_width,dis_height)) #Sets screen size in pixels
 pygame.display.set_caption('Snake by Madison Bintz') #Displays name at the window browser
 
 blue=(0,0,255) #have colors
@@ -41,9 +41,11 @@ def message(msg,color):
     dis.blit(mesg, [dis_width/6, dis_height/3])
 
 def gameLoop(): #creating a function
+    self_score = 0
     game_over = False
     game_close = False
-    
+
+
     x1=dis_width/2
     y1=dis_height/2
 
@@ -60,7 +62,7 @@ def gameLoop(): #creating a function
         
         while game_close == True:
             dis.fill(lightPurple)
-            message("You lost. Press 'q' to Quit and press 'p' to Play again.", red) # give users option to play again or not
+            message("You lost. Press 'q' to Quit  and press 'p' to Play again.", red) # give users option to play again or not
             pygame.display.update()
             
             for event in pygame.event.get():
@@ -109,6 +111,7 @@ def gameLoop(): #creating a function
             
         snakeline(snake_block, snake_list)
         score(Length_of_snake - 1)
+        self_score = Length_of_snake - 1
         
         #pygame.draw.rect(dis,blue,[x1,y1,snake_block,snake_block]) #sets the starting point with a blue color/snake
         
@@ -122,7 +125,10 @@ def gameLoop(): #creating a function
 
 
         clock.tick(snake_speed)
-
+    
+    logging.basicConfig(format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+    logging.warning('The player got a score of %s.', self_score)
+    
     pygame.quit()
     quit()
 
