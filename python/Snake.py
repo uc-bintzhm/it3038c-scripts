@@ -62,6 +62,7 @@ def gameLoop(): #creating a function
         
         while game_close == True:
             dis.fill(lightPurple)
+            score(Length_of_snake - 1)
             message("You lost. Press 'q' to Quit  and press 'p' to Play again.", red) # give users option to play again or not
             pygame.display.update()
             
@@ -70,7 +71,11 @@ def gameLoop(): #creating a function
                     if event.key == pygame.K_q: #has q quit
                         game_over = True
                         game_close = False
+                        logging.basicConfig(filename='pythonsnake.txt',format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+                        logging.warning('The player got a score of %s.', self_score) #script inspired from realpython.com
                     if event.key == pygame.K_p: # has p play again
+                        logging.basicConfig(filename='pythonsnake.txt', format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
+                        logging.warning('The player got a score of %s.', self_score)
                         gameLoop()
 
 
@@ -125,9 +130,6 @@ def gameLoop(): #creating a function
 
 
         clock.tick(snake_speed)
-    
-    logging.basicConfig(format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
-    logging.warning('The player got a score of %s.', self_score)
     
     pygame.quit()
     quit()
