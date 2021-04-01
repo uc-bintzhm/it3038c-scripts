@@ -1,5 +1,5 @@
 var http = require("http");
-var data = require("C:/Users/madis/OneDrive/Documents/it3038c-scripts/node/public/widgets.json");
+var data = require("./public/widgets.json");
 
 var config = require('config')
 var express = require('express')
@@ -28,7 +28,9 @@ var server = http.createServer(function(req, res){
         listBlue(res);
     }
     else if (req.url === "/api") {
-        res.end('<b>Hello World! My name is = <em> bintzhm </em <br /> My Node Environment is : Testing </em></b>')
+        app.get('/', function(request, response) {
+        response.send('<b>Hello World! My name is = <em>' + process.env.MYNAME + '</em <br /> My Node Environemnt is :' + config.util.getEnv('NODE_ENV') + '</em></b>')
+        })
     }
     else {
         res.writeHead(404, {"Content-Type": "text/plain"});      

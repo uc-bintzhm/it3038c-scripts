@@ -8,6 +8,10 @@
     "requests": "^0.3.0"
   },
   "devDependencies": {},
+
+  "engines": {
+    "node": "8.0.0"
+  },
   "scripts": {
     "test": "node api.js"
   },
