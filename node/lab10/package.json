@@ -1,0 +1,25 @@
+{
+  "name": "lab10",
+  "version": "1.0.0",
+  "description": "This is for my homework",
+  "main": "api.js",
+  "dependencies": {
+    "config": "^3.3.6",
+    "requests": "^0.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "node api.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uc-bintzhm/it3038c-scripts/blob/main/node/lab10/api.js"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "express"
+  ],
+  "author": "Madison Bintz",
+  "license": "UNLICENSED"
+}
