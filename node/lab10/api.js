@@ -6,7 +6,7 @@ var express = require('express')
 var app = express()
 
 app.set('port', (process.env.PORT || 3000))
-app.use(express.static(__dirname + '/lab10'))
+app.use(express.static(__dirname + '/public'))
 
 function listBlue(res) {
     var colorBlue = data.filter(function(item) {
@@ -28,9 +28,7 @@ var server = http.createServer(function(req, res){
         listBlue(res);
     }
     else if (req.url === "/api") {
-        app.get('/', function(request, response) {
-        response.send('<b>Hello World! My name is = <em>' + process.env.MYNAME + '</em <br /> My Node Environemnt is :' + config.util.getEnv('NODE_ENV') + '</em></b>')
-        })
+        res.end('<b>Hello World! My name is = <em> bintzhm </em <br /> My Node Environment is : Testing </em></b>')
     }
     else {
         res.writeHead(404, {"Content-Type": "text/plain"});      
