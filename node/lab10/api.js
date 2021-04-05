@@ -1,5 +1,5 @@
 var http = require("http");
-var data = require("./public/widgets.json");
+var data = require("C:/Users/madis/OneDrive/Documents/it3038c-scripts/node/public/widgets.json");
 
 var config = require('config')
 var express = require('express')
