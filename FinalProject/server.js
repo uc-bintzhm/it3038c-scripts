@@ -1,7 +1,6 @@
 var http = require("http");
 var fs = require('fs'); //Allows to read the html that I created because I prefer htmls
-const { text } = require("body-parser");
-//var data = require("C:/Users/madis/OneDrive/Documents/it3038c-scripts/node/public/widgets.json"); will be location of new data/scores
+const bodyParser = require("body-parser"); //research told me to add this because it kept yelling at me
 
 fs.readFile('./index.html', function (err, html) {
 
@@ -13,10 +12,15 @@ fs.readFile('./index.html', function (err, html) {
             res.write(html);  
             res.end();
         } 
-        else if (req.url === "/snake") {
+        else if (req.url === "/snakegame") {
+            fs.readFile('snake.py', 'utf8', function(err, data) {
+                if (err) throw err;  
+                res.end(data);
+            });
+        }
+        else if (req.url === "/snakescore") {
             fs.readFile('pythonsnake.txt', 'utf8', function(err, data) {
-                if (err) throw err;
-                res.writeHeader(200, {"Content-Type": "text/html"});  
+                if (err) throw err;  
                 res.end(data);
             });
         }

@@ -72,10 +72,10 @@ def gameLoop(): #creating a function
                         game_over = True
                         game_close = False
                         logging.basicConfig(filename='pythonsnake.txt',format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
-                        logging.warning('The player got a score of %s.', self_score) #change script inspired from realpython.com
+                        logging.warning('The player got a score of %s.\n', self_score) #change script inspired from realpython.com
                     if event.key == pygame.K_p: # has p play again
                         logging.basicConfig(filename='pythonsnake.txt', format='%(asctime)s - %(message)s', datefmt='%d-%b-%y %H:%M:%S')
-                        logging.warning('The player got a score of %s.', self_score)
+                        logging.warning('The player got a score of %s.\n', self_score)
                         gameLoop()
 
 
