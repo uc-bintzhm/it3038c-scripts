@@ -18,6 +18,12 @@ fs.readFile('./index.html', function (err, html) {
                 res.end(data);
             });
         }
+        else if (req.url === "/snakereadme") {
+            fs.readFile('README.md', 'utf8', function(err, data) {
+                if (err) throw err;  
+                res.end(data);
+            });
+        }
         else if (req.url === "/snakescore") {
             fs.readFile('pythonsnake.txt', 'utf8', function(err, data) {
                 if (err) throw err;  
