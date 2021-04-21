@@ -33,7 +33,7 @@ The path to the all of what the user needs is on my github: https://github.com/u
 ## Project 3 Instructions to make the server work!!
 1. Make sure node is installed and all modules -- this includes "body-parser","fs", and "http"
 2. Once you can run node, in your terminal run `node server` . If there are any errors, check to see if you have all of the required modules for node installed and that the code has everything responding to the proper path. 
-3. You have some options! you can either play the game Snake from your file server first (which I would recommend because it is fun), or you can check out each different "click here"'s. If you haven't played the game however, the pythonsnake.txt will not have any data in it, and there may be an error if you haven't played snake yet to create that file. 
+3. You have some options! you can either play the game Snake from your file server first (which I would recommend because it is fun), or you can check out each different "click here"'s. If you haven't played the game however, the pythonsnake.txt will not have any data in it, and there will be an error if you haven't played snake yet to create that file. 
 ##### Fun Feature! The user can real time update the log for the scores as long as the server is running. To see an updated list as you are playing the game, click your browser's refresh button. 
 
 Overall, the goal is for the user to start the server and see the snake information. 
